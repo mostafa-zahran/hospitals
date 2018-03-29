@@ -7,11 +7,6 @@ class Api::CommentsController < Api::ApiController
     render create_comment_service.comment, create_comment_service.success? ? :ok : :not_acceptable
   end
 
-  def update
-    update_comment_service = UpdateComment.new(comment_params, current_user).update
-    render update_comment_service.comment, update_comment_service.success? ? :ok : :not_modified
-  end
-
   private
 
   def list_service
@@ -23,7 +18,7 @@ class Api::CommentsController < Api::ApiController
   end
 
   def comment_params
-    @comment_params ||= params.require(:comment).permit(:id, :comment, :doctor_id)
+    @comment_params ||= params.require(:comment).permit(:comment, :doctor_id)
   end
 
   def list_params

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :departments, only: [:index, :show]
     resources :doctors, only: [:index, :show]
     resources :governorates, only: [:index, :show]
-    resources :comments, only: [:index, :show, :create, :update]
+    resources :comments, only: [:index, :show, :create]
     resources :specialties, only: [:index, :show]
   end
 end
