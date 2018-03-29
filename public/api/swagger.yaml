@@ -1,0 +1,131 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Health-care Kuwait"
+host: "localhost"
+basePath: "/api"
+tags:
+- name: "hospital"
+  description: "Everything about Kuwait Hospitals"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+- name: "store"
+  description: "Access to Petstore orders"
+- name: "user"
+  description: "Operations about user"
+  externalDocs:
+    description: "Find out more about our store"
+    url: "http://swagger.io"
+definitions:
+  Hospital:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      en_name:
+        type: "string"
+        example: "Hospital"
+      ar_name:
+        type: "string"
+        example: "المستشفي"
+      phone:
+        type: "integer"
+        example: 2345678
+      address:
+        type: "string"
+        example: "8 something, from something else"
+      lat:
+        type: "string"
+        exmple: "12.22212"
+      lng:
+        type: "string"
+        exmple: "19.22212"
+      governorate_id:
+        type: "integer"
+        example: 1
+  Governorate:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      en_name:
+        type: "string"
+        example: "Governorate"
+      ar_name:
+        type: "string"
+        example: "المحافظة"
+  Comment:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      comment:
+        type: "string"
+        example: "Comment"
+      user_id:
+        type: "integer"
+        example: "1"
+      doctor_id:
+        type: "integer"
+        example: "1"
+  Department:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      en_name:
+        type: "string"
+        example: "Department"
+      ar_name:
+        type: "القسم"
+        example: "1"
+      hospital_id:
+        type: "integer"
+        example: "1"
+  Doctor:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      en_name:
+        type: "string"
+        example: "Department"
+      ar_name:
+        type: "القسم"
+        example: "1"
+      en_bio:
+        type: "string"
+        example: "bla bla bla"
+      ar_bio:
+        type: "string"
+        example: "اي كلام"
+      en_schedule:
+        type: "string"
+        example: "schedule"
+      ar_schedule:
+        type: "string"
+        exmaple: "الجدول الزمني"
+      department_id:
+        type: "integer"
+        example: 2
+      image:
+        type: "string"
+        exmaple: "file_path"
+  Specialty:
+    type: "Object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      en_name:
+        type: "string"
+        example: "Specialty"
+      ar_name:
+        type: "string"
+        example: "التخصص"

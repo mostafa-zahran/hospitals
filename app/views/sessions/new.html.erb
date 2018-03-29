@@ -1,0 +1,17 @@
+<div class="border-form-div">
+  <h2><%= t('UI.general.sign_in')%></h2>
+  <%= form_tag sessions_path, mothod: :post do %>
+    <div class="field">
+      <%= label_tag :email %><br/>
+      <%= text_field_tag :email, nil, require: true %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %><br/>
+      <%= text_field_tag :password, nil, require: true, type: :password %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag t('UI.general.submit') %>
+    </div>
+  <% end %>
+</div>
