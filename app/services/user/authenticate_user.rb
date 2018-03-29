@@ -25,7 +25,7 @@ class AuthenticateUser
   private
 
   def authenticated!(user)
-    @authenticated = user.password == @password
+    @authenticated = (user.present? && user.password == @password)
     @current_user = user if @authenticated
   end
 end

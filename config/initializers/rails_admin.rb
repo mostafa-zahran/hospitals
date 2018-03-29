@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
 
   config.current_user_method(&:current_user)
 
-  config.excluded_models = ['ApiKey']
+  config.excluded_models = %w[ApiKey]
 
   config.actions do
     dashboard # mandatory
@@ -50,6 +50,32 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model 'Hospital' do
+    show do
+      configure :hospitals_specialties do
+        hide
+      end
+    end
+    edit do
+      configure :hospitals_specialties do
+        hide
+      end
+    end
+  end
+
+  config.model 'Specialty' do
+    show do
+      configure :hospitals_specialties do
+        hide
+      end
+    end
+    edit do
+      configure :hospitals_specialties do
+        hide
+      end
+    end
   end
 
   config.model 'User' do

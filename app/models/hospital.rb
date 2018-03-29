@@ -3,8 +3,7 @@ class Hospital < ApplicationRecord
 
   belongs_to :governorate
   has_many :departments
-  has_many :hospitals_specialties
-  has_many :specialties, through: :hospitals_specialties
+  has_and_belongs_to_many :specialties
 
   scope :in_governorate , -> (governorate_id){ where(governorate_id: governorate_id) if governorate_id.present? }
   scope :has_specialty, -> (specialty_id) { joins(:specialties).where(specialties: {specialty_id: specialty_id} ) if specialty_id.present?}

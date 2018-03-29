@@ -26,5 +26,12 @@ module HealthCare
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.autoload_paths << "#{Rails.root}/app/services/comment/"
+    config.autoload_paths << "#{Rails.root}/app/services/department/"
+    config.autoload_paths << "#{Rails.root}/app/services/doctor/"
+    config.autoload_paths << "#{Rails.root}/app/services/governorate/"
+    config.autoload_paths << "#{Rails.root}/app/services/hospital/"
+    config.autoload_paths << "#{Rails.root}/app/services/specialty/"
+    config.autoload_paths << "#{Rails.root}/app/services/user/"
   end
 end
