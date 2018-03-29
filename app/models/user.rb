@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def as_json(options)
-    super(:only => [:email, :first_name, :last_name, :api_token])
+    super(:only => [:email, :first_name, :last_name, :api_token, :id])
   end
 
   private
