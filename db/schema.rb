@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20180329164611) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hostpitals_specialties", force: :cascade do |t|
+  create_table "hospitals_specialties", force: :cascade do |t|
     t.integer "hospital_id"
     t.integer "specialty_id"
     t.datetime "created_at", null: false
