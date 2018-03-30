@@ -33,5 +33,12 @@ module HealthCare
     config.autoload_paths << "#{Rails.root}/app/services/hospital/"
     config.autoload_paths << "#{Rails.root}/app/services/specialty/"
     config.autoload_paths << "#{Rails.root}/app/services/user/"
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :put]
+      end
+    end
   end
 end

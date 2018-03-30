@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   delete 'sign_out', to: 'sessions#destroy', as: 'logout'
 
-  scope module: 'api' do
+  namespace :api, defaults: { format: :json } do
     resources :users, only: [:show, :create, :update]
     resources :sessions, only: :create
     resources :hospitals, only: [:index, :show]

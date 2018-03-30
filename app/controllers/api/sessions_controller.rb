@@ -2,7 +2,7 @@ class Api::SessionsController < Api::ApiController
 
   def create
     auth_service = AuthenticateUser.new(session_params[:email], session_params[:password]).api
-    render auth_service.current_user, status: auth_service.authenticated? ? :ok : :unauthorized
+    render json: auth_service.current_user, status: auth_service.authenticated? ? :ok : :unauthorized
   end
 
   private

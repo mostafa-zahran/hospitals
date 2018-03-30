@@ -1,16 +1,15 @@
 module Api
   class ApiController < ActionController::Base
-    before_filter :restrict_access
-    respond_to :json
+    before_action :restrict_access
 
     private
 
     def access_key
-      request.headers['access_key']
+      request.headers['access-key']
     end
 
     def api_token
-      request.headers['api_token']
+      request.headers['api-token']
     end
 
     def current_user

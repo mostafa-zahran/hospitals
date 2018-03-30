@@ -16,6 +16,7 @@ gem 'rails_admin', '~> 1.3'
 gem 'bcrypt'
 gem 'carrierwave', '~> 1.0'
 gem 'swagger_ui_engine'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
