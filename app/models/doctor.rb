@@ -13,6 +13,6 @@ class Doctor < ApplicationRecord
   end
 
   def image_url
-    'http://localhost:3000'+image.url
+    (Rails.env.production? ? 'https://healthcare-kuwait.herokuapp.com': 'http://localhost:3000') + image.url
   end
 end
