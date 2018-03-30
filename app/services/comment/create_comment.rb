@@ -8,6 +8,7 @@ class CreateComment
 
   def create
     @comment = Comment.create(@comment_params.merge({user_id: @current_user.id}))
+    self
   end
 
   def success?

@@ -13,6 +13,7 @@ class UpdateUser
     rescue
       @success = false
     end
+    self
   end
 
   def success?

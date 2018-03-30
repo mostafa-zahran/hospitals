@@ -7,4 +7,12 @@ class Doctor < ApplicationRecord
   mount_uploader :image, DoctorImageUploader
 
   scope :work_in_department, -> (department_id) { where(department_id: department_id) if department_id.present? }
+
+  def as_json(options)
+    super(methods: :image_url)
+  end
+
+  def image_url
+    'http://localhost:3000'+image.url
+  end
 end

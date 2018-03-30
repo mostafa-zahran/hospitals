@@ -6,7 +6,8 @@ class CreateUser
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.create(@user_params)
+    self
   end
 
   def success?
